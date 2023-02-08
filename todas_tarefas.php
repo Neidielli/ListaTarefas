@@ -1,8 +1,18 @@
+<?php
+
+	$acao = 'recuperar';
+	require 'tarefa_controller.php';
+
+	// echo '<pre>';
+	// 	print_r($tarefas);
+	// echo '</pre>';
+?>
+
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>App Lista Tarefas</title>
+		<title>Lista Tarefas</title>
 
 		<link rel="stylesheet" href="css/estilo.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -13,8 +23,8 @@
 		<nav class="navbar navbar-light bg-light">
 			<div class="container">
 				<a class="navbar-brand" href="#">
-					<img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-					App Lista Tarefas
+					<img src="img/log.png" width="30" height="30" class="d-inline-block align-top" alt="">
+					Lista Tarefas
 				</a>
 			</div>
 		</nav>
@@ -36,23 +46,16 @@
 								<h4>Todas tarefas</h4>
 								<hr />
 
-								<div class="row mb-3 d-flex align-items-center tarefa">
-									<div class="col-sm-9">Lavar o carro (status)</div>
-									<div class="col-sm-3 mt-2 d-flex justify-content-between">
-										<i class="fas fa-trash-alt fa-lg text-danger"></i>
-										<i class="fas fa-edit fa-lg text-info"></i>
-										<i class="fas fa-check-square fa-lg text-success"></i>
+								<?php foreach($tarefas as $indice => $tarefa) { ?>
+									<div class="row mb-3 d-flex align-items-center tarefa">
+										<div class="col-sm-9"><?= $tarefa->tarefa ?> (<?= $tarefa->status ?>)</div>
+										<div class="col-sm-3 mt-2 d-flex justify-content-between">
+											<i class="fas fa-trash-alt fa-lg text-danger"></i>
+											<i class="fas fa-edit fa-lg text-info"></i>
+											<i class="fas fa-check-square fa-lg text-success"></i>
+										</div>
 									</div>
-								</div>
-
-								<div class="row mb-3 d-flex align-items-center tarefa">
-									<div class="col-sm-9">Passear com o cachorro (status)</div>
-									<div class="col-sm-3 mt-2 d-flex justify-content-between">
-										<i class="fas fa-trash-alt fa-lg text-danger"></i>
-										<i class="fas fa-edit fa-lg text-info"></i>
-										<i class="fas fa-check-square fa-lg text-success"></i>
-									</div>
-								</div>
+								<?php } ?>
 								
 							</div>
 						</div>
