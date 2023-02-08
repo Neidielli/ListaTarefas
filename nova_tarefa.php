@@ -19,6 +19,13 @@
 			</div>
 		</nav>
 
+		<?php if( isset($_GET['inclusao']) && $_GET['inclusao'] == 1) { ?>
+
+			<div class="bg-success pt-2 text-white d-flex justify-content-center">
+				<h5>Tarefa cadastrada com sucessos!</h5>
+			</div> <!-- Feedback ao usuario -->
+		<?php } ?>
+
 		<div class="container app">
 			<div class="row">
 				<div class="col-md-3 menu">
